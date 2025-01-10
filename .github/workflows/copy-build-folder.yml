@@ -13,12 +13,10 @@ on:
 jobs:
   copy_build_to_site_repo: 
     runs-on: ubuntu-latest
-	
     steps:
     # check out dmlung_test project
     - name: Check out dmlung_test project
       uses: actions/checkout@v3
-	  
     # check out dmlung-test-io project using token generated in that project to successfully access it from inside the dmlung_test GitHub Action workflow
     - name: Check out dmlung-test-io project
       uses: actions/checkout@v3
@@ -26,13 +24,11 @@ jobs:
         repository: dmlung/dmlung-test-io
         path: ./dmlung-test-io
         token: ${{ secrets.DMLUNG_TEST_IO_TOKEN }}
-		
     # make a copy of the build folder file from dmlung_test project
     - name: Copy build folder
       run: bash ./.github/scripts/copy-build-folder.sh
       env:
         DESTINATION_PATH: ./dmlung-test-io/v1.0-post/
-		
     # push the copy of the dmlung_test build folder there (subfolder specified)
     - name: Push to dmlung-test-io repo
       run: bash ./.github/scripts/push-build-to-dmlung-test-io.sh
