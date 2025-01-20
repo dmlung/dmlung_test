@@ -28,7 +28,10 @@ jobs:
     - name: Copy build folder
       run: bash ./.github/scripts/copy-build-folder.sh
       env:
-        DESTINATION_PATH: ./dmlung-test-io/v1.0-post/
-    # push the copy of the dmlung_test build folder there (subfolder specified)
+        DESTINATION_REPO: ./dmlung-test-io/
+        DESTINATION_TAG: v1.0-post
+    # push the copy of the dmlung_test build folder there
     - name: Push to dmlung-test-io repo
       run: bash ./.github/scripts/push-build-to-dmlung-test-io.sh
+      env:
+        DESTINATION_REPO: ./dmlung-test-io
