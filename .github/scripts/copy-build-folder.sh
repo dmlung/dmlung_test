@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail # strict mode
 
+readonly CURRENT_DIR="$( pwd )"
+
+for entry in "$CURRENT_DIR"/*
+do
+  echo "$entry"
+done
+
 DESTINATION_PATH=$DESTINATION_REPO$DESTINATION_TAG
 
 # Folders to copy from dmlung_test
