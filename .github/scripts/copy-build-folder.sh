@@ -2,6 +2,7 @@
 set -euo pipefail # strict mode
 
 readonly CURRENT_DIR="$( pwd )"
+echo "Current directory is $CURRENT_DIR"
 
 for entry in "$CURRENT_DIR"/*
 do
