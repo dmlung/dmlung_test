@@ -12,8 +12,8 @@ done
 DESTINATION_PATH=$DESTINATION_REPO$DESTINATION_TAG
 
 # Folders to copy from dmlung_test
-BUILD_E_FOLDER=./dmlung_test/build/encoding
-BUILD_FLD_FOLDER=./dmlung_test/build/field-level-documentation
+BUILD_E_FOLDER=./build/encoding
+BUILD_FLD_FOLDER=./build/field-level-documentation
 
 # if the folder exists in dmlung_test, copy it to dmlung-test-io repo subfolder
 if [ -d "$BUILD_E_FOLDER" ]; then
